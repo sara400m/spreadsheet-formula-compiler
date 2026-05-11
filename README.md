@@ -16,7 +16,6 @@ This project is a complete compiler front-end for a custom Spreadsheet Formula L
 
 ##  Tech Stack
 - **Language**: Java
-- **Build Tool**: IntelliJ IDEA IDE
 - **Architecture**: Front-End (Scanner -> Parser -> AST)
 
 ##  Grammar (EBNF)
