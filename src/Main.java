@@ -70,8 +70,8 @@ public class Main {
                     }
 
                 } else if (choiceStr.equals("2")) {
-                    System.out.print("File name: ");
-                    String fileName = sc.nextLine().trim();
+                    //System.out.print("File name: ");
+                    String fileName = "formulas.txt";
                     Scanner fileScanner = new Scanner(new File(fileName));
                     while (fileScanner.hasNextLine()) {
                         String line = fileScanner.nextLine().trim();
