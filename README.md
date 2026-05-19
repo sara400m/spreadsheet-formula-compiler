@@ -22,8 +22,8 @@ This project is a complete compiler front-end for a custom Spreadsheet Formula L
 The parser is built based on the following grammar rules:
 ```text
 Formula       = "=" , Expression
-Expression    = Term , { ("+" | "-") , Term }
-Term          = Factor , { ("*" | "/") , Factor }
+Expression    = Term , { Op , Term }
+Term          = Factor , { HOp , Factor }
 Factor        = Number | CellRef | Range | FunctionCall | IfCondition | "(" , Expression , ")"
 Range        = CellReference , ":" , CellReference 
 
@@ -39,6 +39,13 @@ Comparison   = Expression , CompOp , Expression
 Op           = "+" | "-" 
 HOp          = "*" | "/" 
 
-
 CompOp       = ">=" | "<=" | "<>" | "=" | ">" | "<"
+
+
+CellReference = Word , Number 
+Word          = Letter , { Letter } 
+Letter        = "A" | "B" | ... | "Z" 
+Digit         = "0" | "1" | ... | "9" 
+NonZeroDigit  = "1" | "2" | ... | "9" 
+Number        = NonZeroDigit , { Digit } 
 ```
